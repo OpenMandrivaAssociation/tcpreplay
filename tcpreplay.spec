@@ -8,6 +8,7 @@ URL:		http://tcpreplay.sf.net/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 BuildRequires:	tcpdump
 BuildRequires:	libpcap-devel >= 0.7.2
+BuildRequires:	libautogen-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
