@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.0.0
+Version:	3.0.1
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
