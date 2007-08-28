@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.1.1
+Version:	3.2.0
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
@@ -22,12 +22,13 @@ files.
 
 %setup -q
 
-# build against the shared build deps
-perl -pi -e "s|libpcap\.a|libpcap\.so|g" configure*
-
 %build
 
 %configure2_5x
+
+# build against the shared build deps
+find -name "Makefile" | xargs perl -pi -e "s|^LPCAPLIB.*|LPCAPLIB = -lpcap|g"
+find -name "Makefile" | xargs perl -pi -e "s|%{_libdir}/libpcap\.a|-lpcap|g"
 
 %make
 
