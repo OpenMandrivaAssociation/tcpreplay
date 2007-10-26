@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.2.0
+Version:	3.2.1
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
@@ -8,7 +8,7 @@ URL:		http://tcpreplay.sf.net/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 BuildRequires:	tcpdump
 BuildRequires:	libpcap-devel >= 0.7.2
-BuildRequires:	libautogen-devel
+BuildRequires:	autogen-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
