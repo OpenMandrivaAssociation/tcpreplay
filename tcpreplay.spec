@@ -9,7 +9,6 @@ Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 BuildRequires:	tcpdump
 BuildRequires:	libpcap-devel >= 0.7.2
 BuildRequires:	autogen-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Tcpreplay is a tool to replay captured network traffic. Currently, tcpreplay
