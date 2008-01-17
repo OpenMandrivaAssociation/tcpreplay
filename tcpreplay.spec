@@ -1,15 +1,15 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.2.1
+Version:	3.2.4
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
-URL:		http://tcpreplay.sf.net/
+URL:		http://tcpreplay.synfin.net/trac/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 BuildRequires:	tcpdump
 BuildRequires:	libpcap-devel >= 0.7.2
 BuildRequires:	autogen-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Tcpreplay is a tool to replay captured network traffic. Currently, tcpreplay
@@ -24,13 +24,15 @@ files.
 
 %build
 
-%configure2_5x
-
-# build against the shared build deps
-find -name "Makefile" | xargs perl -pi -e "s|^LPCAPLIB.*|LPCAPLIB = -lpcap|g"
-find -name "Makefile" | xargs perl -pi -e "s|%{_libdir}/libpcap\.a|-lpcap|g"
+%configure2_5x \
+    --enable-dynamic-link \
+    --with-testnic=eth0 \
+    --with-testnic2=eth1
 
 %make
+
+#%%check
+#make test <- requires root permissions
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
