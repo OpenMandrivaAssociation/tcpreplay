@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.2.4
+Version:	3.2.5
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
@@ -26,6 +26,7 @@ files.
 
 %configure2_5x \
     --enable-dynamic-link \
+    --enable-tcpreplay-edit \
     --with-testnic=eth0 \
     --with-testnic2=eth1
 
