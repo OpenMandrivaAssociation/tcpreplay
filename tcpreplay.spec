@@ -1,7 +1,7 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.3.0
-Release:	%mkrel 0
+Version:	3.3.1
+Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
 URL:		http://tcpreplay.synfin.net/trac/
@@ -37,12 +37,12 @@ files.
 #make test <- requires root permissions
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall_std
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
