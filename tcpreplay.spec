@@ -1,7 +1,7 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.3.2
-Release:	%mkrel 2
+Version:	3.4.0
+Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
 URL:		http://tcpreplay.synfin.net/trac/
