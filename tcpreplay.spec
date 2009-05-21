@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.4.1
+Version:	3.4.2
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
@@ -51,5 +51,6 @@ rm -rf %{buildroot}
 %{_bindir}/tcpbridge
 %{_bindir}/tcpprep
 %{_bindir}/tcpreplay
+%{_bindir}/tcpreplay-edit
 %{_bindir}/tcprewrite
 %{_mandir}/man1/*
