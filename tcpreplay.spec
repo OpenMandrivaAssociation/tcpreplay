@@ -1,11 +1,12 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
 Version:	3.4.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	BSD
 Group:		Networking/Other
 URL:		http://tcpreplay.synfin.net/trac/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
+Patch0:		tcpreplay-3.4.2-get_interface.patch
 BuildRequires:	autogen >= 5.9
 BuildRequires:	autogen-devel >= 5.9
 BuildRequires:	libdnet-devel
@@ -23,6 +24,7 @@ files.
 %prep
 
 %setup -q
+%patch0 -p1 -b .get_interface
 
 %build
 
