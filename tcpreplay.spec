@@ -1,6 +1,6 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.4.3
+Version:	3.4.4
 Release:	%mkrel 1
 License:	BSD
 Group:		Networking/Other
@@ -22,18 +22,15 @@ conditions as well as capinfo which provides basic information about capture
 files.
 
 %prep
-
 %setup -q
 %patch0 -p1 -b .get_interface
 
 %build
-
 %configure2_5x \
     --enable-dynamic-link \
     --enable-tcpreplay-edit \
     --with-testnic=eth0 \
     --with-testnic2=eth1
-
 %make
 
 #%%check
@@ -41,7 +38,6 @@ files.
 
 %install
 rm -rf %{buildroot}
-
 %makeinstall_std
 
 %clean
