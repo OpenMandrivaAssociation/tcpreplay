@@ -1,0 +1,12 @@
+diff -p -up tcpreplay-3.4.2/src/common/interface.c.orig tcpreplay-3.4.2/src/common/interface.c
+--- tcpreplay-3.4.2/src/common/interface.c.orig	2009-06-15 19:26:27.000000000 -0300
++++ tcpreplay-3.4.2/src/common/interface.c	2009-06-15 19:27:29.000000000 -0300
+@@ -73,7 +73,7 @@ get_interface(interface_list_t *list, co
+         } while (ptr != NULL);
+     } else {
+         name = (char *)safe_malloc(strlen(alias) + 1);
+-        strlcpy(name, alias, sizeof(name));
++        strlcpy(name, alias, strlen(alias) + 1);
+         return(name);
+     }
+     
