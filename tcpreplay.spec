@@ -4,7 +4,7 @@ Version:	3.4.4
 Release:	3
 License:	BSD
 Group:		Networking/Other
-URL:		http://tcpreplay.synfin.net/trac/
+URL:		https://tcpreplay.synfin.net/trac/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 Patch0:		tcpreplay-3.4.2-get_interface.patch
 BuildRequires:	autogen >= 5.9
