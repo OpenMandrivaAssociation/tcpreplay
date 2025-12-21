@@ -7,6 +7,11 @@ Group:		Networking/Other
 URL:		https://tcpreplay.synfin.net/trac/
 Source0:	http://prdownloads.sourceforge.net/tcpreplay/%{name}-%{version}.tar.gz
 Patch0:		tcpreplay-3.4.2-get_interface.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	autogen >= 5.9
 BuildRequires:	autogen-devel >= 5.9
 BuildRequires:	libdnet-devel
