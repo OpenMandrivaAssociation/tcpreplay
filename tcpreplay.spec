@@ -1,7 +1,7 @@
 Summary:	A tool to replay captured network traffic
 Name:		tcpreplay
-Version:	3.4.4
-Release:	3
+Version:	4.6.0
+Release:	1
 License:	BSD
 Group:		Networking/Other
 URL:		https://tcpreplay.synfin.net/trac/
@@ -28,7 +28,7 @@ files.
 
 %prep
 %setup -q
-%patch0 -p1 -b .get_interface
+%patch -P0 -p1 -b .get_interface
 
 %build
 %configure2_5x \

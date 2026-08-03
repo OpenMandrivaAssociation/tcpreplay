@@ -1,12 +1,34 @@
-diff -p -up tcpreplay-3.4.2/src/common/interface.c.orig tcpreplay-3.4.2/src/common/interface.c
---- tcpreplay-3.4.2/src/common/interface.c.orig	2009-06-15 19:26:27.000000000 -0300
-+++ tcpreplay-3.4.2/src/common/interface.c	2009-06-15 19:27:29.000000000 -0300
-@@ -73,7 +73,7 @@ get_interface(interface_list_t *list, co
-         } while (ptr != NULL);
-     } else {
-         name = (char *)safe_malloc(strlen(alias) + 1);
--        strlcpy(name, alias, sizeof(name));
+--- a/src/common/interface.c
++++ b/src/common/interface.c
+@@ -39,17 +39,25 @@
+ get_interface(interface_list_t *list, const char *alias)
+ {
+     interface_list_t *ptr;
++    char *name;
+ 
+     assert(alias);
+ 
+-    ptr = list;
++    if (list != NULL) {
++        ptr = list;
+ 
+-    while (ptr) {
+-        /* check both the alias & name fields */
+-        if (strcmp(alias, ptr->alias) == 0 || strcmp(alias, ptr->name) == 0)
+-            return (ptr->name);
++        while (ptr) {
++            /* check both the alias & name fields */
++            if (strcmp(alias, ptr->alias) == 0 || strcmp(alias, ptr->name) == 0)
++                return (ptr->name);
+ 
+-        ptr = ptr->next;
++            ptr = ptr->next;
++        }
++    } else {
++        /* list unavailable: pass through alias (use alloc size, not sizeof pointer) */
++        name = (char *)safe_malloc(strlen(alias) + 1);
 +        strlcpy(name, alias, strlen(alias) + 1);
-         return(name);
++        return (name);
      }
-     
+ 
+     return (NULL);
